@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://buvonqaltttws"]
+
+[ext_resource type="Texture2D" uid="uid://clnpaxogv6g5f" path="res://Assets/tetrominoes.png" id="1_eragw"]
+[ext_resource type="Texture2D" uid="uid://wwe4xehxhw78" path="res://Assets/border.png" id="2_4eh35"]
+[ext_resource type="Script" path="res://TileMap.gd" id="3_t1y5i"]
+[ext_resource type="PackedScene" uid="uid://i1gdnhi5vs47" path="res://Scenes/hud.tscn" id="4_rvl8w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d87wc"]
+texture = ExtResource("1_eragw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg0i6"]
+texture = ExtResource("2_4eh35")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tn6i3"]
+tile_size = Vector2i(32, 32)
+sources/6 = SubResource("TileSetAtlasSource_yg0i6")
+sources/0 = SubResource("TileSetAtlasSource_d87wc")
+
+[node name="TileMap" type="TileMap"]
+texture_filter = 1
+tile_set = SubResource("TileSet_tn6i3")
+format = 2
+layer_0/name = "board"
+layer_0/tile_data = PackedInt32Array(0, 6, 0, 65536, 393222, 0, 131072, 393222, 0, 196608, 393222, 0, 262144, 393222, 0, 327680, 393222, 0, 393216, 393222, 0, 458752, 393222, 0, 524288, 393222, 0, 589824, 393222, 0, 655360, 393222, 0, 720896, 393222, 0, 786432, 393222, 0, 851968, 393222, 0, 917504, 393222, 0, 983040, 393222, 0, 1048576, 393222, 0, 1114112, 393222, 0, 1179648, 393222, 0, 1245184, 393222, 0, 1310720, 393222, 0, 1376256, 65542, 0, 1376257, 327686, 0, 1376258, 327686, 0, 1376259, 327686, 0, 1376260, 327686, 0, 1376261, 327686, 0, 1376262, 327686, 0, 1376263, 327686, 0, 1376264, 327686, 0, 1376265, 327686, 0, 1376266, 327686, 0, 1376267, 131078, 0, 1310731, 458758, 0, 1245195, 458758, 0, 1179659, 458758, 0, 1114123, 458758, 0, 1048587, 458758, 0, 983051, 458758, 0, 917515, 458758, 0, 851979, 458758, 0, 786443, 458758, 0, 720907, 458758, 0, 655371, 458758, 0, 589835, 458758, 0, 524299, 458758, 0, 458763, 458758, 0, 393227, 458758, 0, 327691, 458758, 0, 262155, 458758, 0, 196619, 458758, 0, 131083, 458758, 0, 65547, 458758, 0, 11, 196614, 0, 10, 262150, 0, 9, 262150, 0, 8, 262150, 0, 7, 262150, 0, 6, 262150, 0, 5, 262150, 0, 4, 262150, 0, 3, 262150, 0, 2, 262150, 0, 1, 262150, 0)
+layer_1/name = "active"
+layer_1/tile_data = PackedInt32Array()
+script = ExtResource("3_t1y5i")
+
+[node name="HUD" parent="." instance=ExtResource("4_rvl8w")]

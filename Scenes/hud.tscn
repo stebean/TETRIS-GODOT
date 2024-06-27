@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://i1gdnhi5vs47"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6pu37"]
+bg_color = Color(3.91062e-07, 0.189228, 0.220941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5nsw4"]
+bg_color = Color(0, 0.287438, 0.354288, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1xv"]
+bg_color = Color(2.02149e-06, 0.490974, 0.59778, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h6yps"]
+bg_color = Color(0, 0.490196, 0.596078, 1)
+
+[node name="HUD" type="CanvasLayer"]
+layer = 0
+
+[node name="bg" type="Panel" parent="."]
+texture_filter = 1
+offset_left = 384.0
+offset_top = 300.0
+offset_right = 650.0
+offset_bottom = 704.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6pu37")
+
+[node name="bg2" type="Panel" parent="bg"]
+texture_filter = 1
+offset_top = -300.0
+offset_right = 266.0
+offset_bottom = -150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6pu37")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 426.0
+offset_top = 115.0
+offset_right = 606.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 30
+text = "NEXT PIECE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 72.0
+offset_top = 280.0
+offset_right = 300.0
+offset_bottom = 335.0
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 407.0
+offset_top = 331.0
+offset_right = 476.0
+offset_bottom = 354.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "SCORE: 0"
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+offset_left = 432.0
+offset_top = 568.0
+offset_right = 612.0
+offset_bottom = 608.0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_5nsw4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lq1xv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h6yps")
+text = "NEW GAME"
